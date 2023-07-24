@@ -2,6 +2,7 @@
 This repo helps to change the AD user's password and update it in the Windows Credential Manager. Also, includes to add the printers from print server
 
 PREVIEWS
+
 ADPassChng_AddPrinters: (Purpose - To change AD Password and Add Printers)
 ![image](https://github.com/Ssri7774/UI-ADPassChng-AddPrinters/assets/95307763/4583b41c-81f6-4f5a-b77c-687906bf0600)
 
@@ -12,7 +13,10 @@ AddPrinters: (Purpose - To Add Printer(s) from the print server)
 ![image](https://github.com/Ssri7774/UI-ADPassChng-AddPrinters/assets/95307763/9b907983-314d-43cf-9e17-d9304d86e9ba)
 
 
+MODIFICATIONS
+
 Note: You need to replace the following places from the script to use it for your environment (Tip: Use 'Find' feature to see the places to 'REPLACE').
+
 ADPassChng_AddPrinters.ps1
 1. Line 15 - #REPLACE (.\Logo.png) with the path to your logo image (Optional)
 2. Line 225 - #REPLACE (example1.com) with your Domain Name1
