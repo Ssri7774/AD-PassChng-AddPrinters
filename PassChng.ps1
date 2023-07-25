@@ -1,3 +1,18 @@
+$Configuration = Get-Content $PSScriptRoot\Configuration.json | ConvertFrom-Json
+
+function Get-BestDomainController {
+    param (
+        $DomainControllers 
+    )
+    ForEach($DomainController in $DomainControllers) {
+        if(Test-Connection -ComputerName $DomainController.Name -Count 1 -ErrorAction SilentlyContinue) {
+            return $DomainController
+        }
+    }
+}
+
+$BestDomainController = Get-BestDomainController -DomainControllers $Configuration.Curriculum.Domain
+
 # Code for password change script goes here
 Add-Type -AssemblyName System.Windows.Forms
 
@@ -44,7 +59,7 @@ if (-not (Get-Module -ListAvailable -Name ActiveDirectory)) {
 # Create a form for password change
 $passwordChangeForm = New-Object System.Windows.Forms.Form
 $passwordChangeForm.Text = "AD Password Change"
-$passwordChangeForm.Size = New-Object System.Drawing.Size(500, 500)
+$passwordChangeForm.Size = New-Object System.Drawing.Size(500, 510)
 $passwordChangeForm.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::FixedDialog
 $passwordChangeForm.StartPosition = [System.Windows.Forms.FormStartPosition]::CenterScreen
 $passwordChangeForm.MaximizeBox = $false
@@ -124,6 +139,13 @@ $buttonChangePassword.Font = New-Object System.Drawing.Font("Arial", 12, [System
 $buttonChangePassword.FlatStyle = [System.Windows.Forms.FlatStyle]::Popup
 $passwordChangeForm.Controls.Add($buttonChangePassword)
 
+$labelDCName = New-Object System.Windows.Forms.Label
+$labelDCName.Text = "Using DC: $($BestDomainController.Name)"
+$labelDCName.Font = New-Object System.Drawing.Font("Arial", 10, [System.Drawing.FontStyle]::Regular)
+$labelDCName.AutoSize = $true
+$labelDCName.Location = New-Object System.Drawing.Point(10, 450)
+$passwordChangeForm.Controls.Add($labelDCName)
+
 # Event handler for the button click
 $buttonChangePassword.Add_Click({
     # Code for password change script goes here
@@ -131,6 +153,7 @@ $buttonChangePassword.Add_Click({
     $currentPassword = $textBoxCurrentPassword.Text | ConvertTo-SecureString -AsPlainText -Force
     $newPassword = $textBoxNewPassword.Text | ConvertTo-SecureString -AsPlainText -Force
     $reenteredNewPassword = $textBoxReenterNewPassword.Text | ConvertTo-SecureString -AsPlainText -Force
+    $dcserver = $BestDomainController.Name
 
     # Check if any required text box is empty
     if ([string]::IsNullOrEmpty($adusername) -or [string]::IsNullOrEmpty($textBoxCurrentPassword.Text) -or [string]::IsNullOrEmpty($textBoxNewPassword.Text) -or [string]::IsNullOrEmpty($textBoxReenterNewPassword.Text)) {
@@ -159,7 +182,7 @@ $buttonChangePassword.Add_Click({
 
     try {
         # Change the AD password
-        Set-ADAccountPassword -Identity $adusername -OldPassword $currentPassword -NewPassword $newPassword
+        Set-ADAccountPassword -Identity $adusername -OldPassword $currentPassword -NewPassword $newPassword -Server $dcserver
 
         # Convert the new password back to plain text
         $newPasswordPlainText = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto([System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($newPassword))
