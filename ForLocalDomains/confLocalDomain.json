@@ -1,0 +1,43 @@
+{
+    "Curriculum": {
+        "NetBIOS":
+            {
+                "Name": "NetBIOSDomainName",
+                "comment": "Replace 'NetBIOSDomainName' with the Authentication Domain which will be used as default Domain while changing the password, example: 'NetBIOSDomainName\\Username'"
+            },
+        "DomainContorller": 
+            [
+                {
+                    "comment": "Add all the active Domain Controllers with FQDN or IP addeess. You can also give single Domain Controller"
+                },
+                {
+                    "Name": "dc01",
+                    "description": "Primary DC"
+                },
+                {
+                    "Name": "dc02",
+                    "description": "Secondary DC"
+                },
+                {
+                    "Name": "dc03",
+                    "description": "Redundancy DC"
+                }
+            ],
+        "PrintServer":
+            [
+                {
+                    "comment": "Similar to the domain contollers above you can add multuple print server with FQDN or IP. Give multiple print server for redundancy (not mandatory to mention multiple server)"
+                },
+                {
+                    "Name": "ps01",
+                    "description": "Primary Print Server"
+                }
+            ],   
+        "Media":
+            {
+                "Logo": ".\\Logo.png",
+                "comment": "(Optional) Add the path if you have any"
+            }
+
+    }
+}

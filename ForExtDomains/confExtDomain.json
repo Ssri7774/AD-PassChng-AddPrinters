@@ -1,0 +1,65 @@
+{
+    "Curriculum": {
+        "NetBIOS":
+            {
+                "Name": "NetBIOSDomainName",
+                "comment": "Replace 'NetBIOSDomainName' with the Authentication Domain which will be used as default Domain while changing the password, example: 'NetBIOSDomainName\\Username'"
+            },
+        "DomainContorller": 
+            [
+                {
+                    "comment": "Add all the active Domain Controllers with FQDN or IP addeess. You can also give single Domain Controller"
+                },
+                {
+                    "Name": "dc01.example1.com",
+                    "description": "Primary DC"
+                },
+                {
+                    "Name": "dc02.example1.com",
+                    "description": "Secondary DC"
+                },
+                {
+                    "Name": "dc03.example1.com",
+                    "description": "Redundancy DC"
+                }
+            ],
+        "Domain":
+            [
+                {
+                    "comment": "Add all the domains needs to be added in the Windows Credential Manager"
+                },
+                {
+                    "Name": "example1.com",
+                    "description": "Old Domain"
+                },
+                {
+                    "Name": "*.example1.com",
+                    "description": "All sub-domains in Old Domain"
+                },
+                {
+                    "Name": "example2.com",
+                    "description": "New Domain"
+                },
+                {
+                    "Name": "*.example2.com",
+                    "description": "All sub-domains in New Domain"
+                }
+            ],
+        "PrintServer":
+            [
+                {
+                    "comment": "Similar to the domain contollers above you can add multuple print server with FQDN or IP. Give multiple print server for redundancy (not mandatory to mention multiple server)"
+                },
+                {
+                    "Name": "ps01.example1.com",
+                    "description": "Primary Print Server"
+                }
+            ],   
+        "Media":
+            {
+                "Logo": ".\\Logo.png",
+                "comment": "(Optional) Add the path if you have any"
+            }
+
+    }
+}
