@@ -343,12 +343,16 @@ $buttonPasswordChange.Add_Click({
             }
             catch {
                 $errorMessage = $_.Exception.Message
-                $message = "Password Change Error Details:`n$errorMessage"
+                $message = "Password Change Error Details:`n$errorMessage `nProbably current Password is incorrect `nThis application will close now. `nRe-run the Setup file and enter correct details"
                 # Close the "Please wait" form
                 $CPwaitForm.Close()
                 [System.Windows.Forms.MessageBox]::Show($message, "FAILED", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error, [System.Windows.Forms.MessageBoxDefaultButton]::Button1)
                 # Log the error
-                Write-Host "Password Change Error: $errorMessage"
+                Write-Host "Probably current Password is incorrect. Password Change Error: $errorMessage"
+                # Close the form
+                $passwordChangeForm.Close()
+                # Close the form
+                $mainForm.Close()
             }
 
             # Add Credentials to the Windoes Credentials Manager
