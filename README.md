@@ -1,7 +1,7 @@
 # UI-ADPassChng-AddPrinters
 This repo helps to change the AD user's password and update it in the Windows Credential Manager. Also, includes to add the printers from print server
 
-# New Features
+## New Features
 - Added the field at the bottom of the UI to see which Domain Controller and Printer Server is in use
 - Two scenarios to work this script form domain joined device (ForLocalDomains) and to run from external domain joined device (ForExtDomains)
 - Username automatically entered based on logged in user (can we editable)
@@ -29,6 +29,6 @@ In the previous release, the modification have to made in the PowerShell Script.
 See the .json files in respective directories to modify the required fields. There are `comment` and `description` in the .json files which helps to understand what exact information need to be provided.
 
 
-# How to use?
+## How to use?
 
 Just run the Setup.bat file to run the application which takes care of script execution policy to run as Bypass.
