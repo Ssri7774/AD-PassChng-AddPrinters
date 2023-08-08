@@ -27,3 +27,8 @@ This repo helps to change the AD user's password and update it in the Windows Cr
 In the previous release, the modification have to made in the PowerShell Script. But now we have a JSON configuration file where the required details need to be updated to work this in you environment.
 
 See the .json files in respective directories to modify the required fields. There are `comment` and `description` in the .json files which helps to understand what exact information need to be provided.
+
+
+# How to use?
+
+Just run the Setup.bat file to run the application which takes care of script execution policy to run as Bypass.
