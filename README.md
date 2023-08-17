@@ -7,6 +7,9 @@ This repo helps to change the AD user's password and update it in the Windows Cr
 - Username automatically entered based on logged in user (can we editable)
 - Log file will be created in the directory of the script running from
 
+# Download
+Click [here](https://github.com/Ssri7774/UI-ADPassChng-AddPrinters/releases/download/latest/UI-ADPassChng-AddPrinters-main.zip) to download
+
 ## PREVIEWS
 
 #### ADPassChng_AddPrinters: (Purpose - To change AD Password and Add Printers)
