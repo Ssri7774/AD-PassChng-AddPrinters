@@ -4,7 +4,7 @@ This repo helps to change the AD user's password and update it in the Windows Cr
 ## New Features
 - Added the field at the bottom of the UI to see which Domain Controller and Printer Server is in use
 - Two scenarios to work this script form domain joined device (ForLocalDomains) and to run from external domain joined device (ForExtDomains)
-- Username automatically entered based on logged in user (can we editable)
+- Username automatically entered based on logged in user (can be editable)
 - Log file will be created in the directory of the script running from
 
 ## Download
