@@ -15,7 +15,7 @@ This repo helps to change the AD user's password and update it in the Windows Cr
 
 #### PassChng: (Purpose - To change AD Password)
 
-<img width="383" alt="image" src="https://github.com/Ssri7774/UI-ADPassChng-AddPrinters/assets/95307763/2e30bf47-f411-41a0-acce-a4f280fa8406">
+<img width="385" alt="image" src="https://github.com/Ssri7774/UI-ADPassChng-AddPrinters/assets/95307763/e95e7420-4dae-4e35-8a30-935d1c4cff7e">
 
 #### AddPrinters: (Purpose - To Add Printer(s) from the print server)
 
