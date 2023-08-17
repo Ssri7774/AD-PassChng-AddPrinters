@@ -1,5 +1,5 @@
 # UI-ADPassChng-AddPrinters
-This repo helps to change the AD user's password and update it in the Windows Credential Manager. Also, includes to add the printers from print server for local users via local and externam domain.
+This repo helps to change the AD user's password and update it in the Windows Credential Manager. Also, includes to add the printers from print server for local users via local and external domain.
 
 ## New Features
 - Added the field at the bottom of the UI to see which Domain Controller and Printer Server is in use
