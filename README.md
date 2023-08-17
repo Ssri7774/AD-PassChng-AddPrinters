@@ -7,7 +7,7 @@ This repo helps to change the AD user's password and update it in the Windows Cr
 - Username automatically entered based on logged in user (can we editable)
 - Log file will be created in the directory of the script running from
 
-# Download
+## Download
 Click [here](https://github.com/Ssri7774/UI-ADPassChng-AddPrinters/releases/download/latest/UI-ADPassChng-AddPrinters-main.zip) to download
 
 ## PREVIEWS
@@ -36,11 +36,11 @@ See the .json files in respective directories to modify the required fields. The
 
 Just run the Setup.bat file to run the application which takes care of script execution policy to run as Bypass.
 
-# Troubleshoot
+## Troubleshoot
 
-## Potential Errors & Warnings
+### Potential Errors & Warnings
 
-### ForExtDomains
+#### ForExtDomains
 
 > To resolve this error, you need to close the application and run the Setup.bat again and enter the Correct Password.
 >
@@ -50,13 +50,13 @@ Just run the Setup.bat file to run the application which takes care of script ex
 >
 >> ![image](https://github.com/Ssri7774/UI-ADPassChng-AddPrinters/assets/95307763/87564741-1dde-4caf-83b3-c8a3f9f340cc)
 
-### For Local Domains
+#### For Local Domains
 
 > To resolve this error, re-enter the correct password (no need to close the application).
 >
 >> ![image](https://github.com/Ssri7774/UI-ADPassChng-AddPrinters/assets/95307763/5f0524c0-1201-40d7-b35f-e597cb0dbb28)
 
-### Common Errors
+#### Common Errors
 
 > If you click on the change password button without filling in any of the fields, it will cause this error. Make sure to fill in all the details before clicking on Change password.
 >
